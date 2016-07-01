@@ -4,17 +4,20 @@ import {StatusPipe} from './status.pipe';
 @Component({
   selector: 'task-details',
   templateUrl: 'partials/task-details.html',
-  inputs: ['task'],
+  inputs: ['task','edit'],
   pipes: [StatusPipe],
-  styleUrls: ['css/task-details.component.css']
+  styleUrls: ['css/app.css','css/task-details.component.css']
 })
 
 export class TaskDetailsComponent{
 
   @Input('myTask') task;
+  @Input('myEdit') editFlag;
 
-  @Output('deleteTaskItem') delete = new EventEmitter();
+  @Output('editTaskItem') edit = new EventEmitter();
 
-  onDeleteTask() { this.delete.emit(this.task); }
+  onEditTask() { 
+    this.edit.emit(this.task); 
+  }
 
 }

@@ -8,7 +8,7 @@ import {StatusClassDirective} from './status-class.directive';
   directives: [StarredClassDirective, StatusClassDirective],
   pipes: [StatusPipe],
   templateUrl: 'partials/task-item.html',
-  styleUrls : ['css/task-item.component.css'],
+  styleUrls : ['css/app.css','css/task-item.component.css'],
   inputs: ['task']
 })
 

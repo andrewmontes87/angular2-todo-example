@@ -1,22 +1,37 @@
-
-
-<section class="flexcontainer">
-
-  <task-details 
-    [myTask]="currentTask"
-    (deleteTaskItem)="onDeleteTaskEvent($event)">
-  </task-details>
-
-
-  <ul class="tasklist cf">
-    <li  class="task cf" *ngFor="#item of (tasks)"> <!-- (click)="showTask(item);"  #item of (tasks) -->
-      <task-item 
-        (starTaskItem)="onStarTaskEvent($event)"
-        (showTaskDetailsItem)="onShowTaskDetailsEvent($event)"
-        [myTask]=item
-        class="content">
-      </task-item>
-    </li>
-  </ul>
-
+<section class="row">
+  <div class="col-sm-4 col-sm-offset-1">
+    <task-details 
+      [myTask]="currentTask"
+      [myEdit]="edit"
+      (editTaskItem)="onEditTaskEvent($event)">
+    </task-details>    
+  </div>
+  <div class="col-sm-6">
+    <task-edit class="task-edit cf"
+      *ngIf="edit" 
+      [myTask]="currentTask"
+      (deleteTaskItem)="onDeleteTaskEvent($event)"
+      (editTaskItem)="onEditTaskEvent($event)"
+      (saveTaskItem)="onSaveTaskEvent($event)">
+    </task-edit>
+    <div *ngIf="!edit">
+      <label for="filter-nav">Filter list by status:</label>
+      <nav class="btn-group" name="filter-nav" role="group" aria-label="...">
+        <button [routerLink]="['../List', {status: null}]" type="button" class="btn btn-default">All</button>
+        <button [routerLink]="['../List', {status: 0}]" type="button" class="btn btn-default">TODO</button>
+        <button [routerLink]="['../List', {status: 1}]" type="button" class="btn btn-default">In Progress</button>
+        <button [routerLink]="['../List', {status: 2}]" type="button" class="btn btn-default">Done</button>
+      </nav>   
+      <ul  class="tasklist cf">
+        <li  class="task cf" *ngFor="#item of (tasks)"> <!-- (click)="showTask(item);"  #item of (tasks) -->
+          <task-item 
+            (starTaskItem)="onStarTaskEvent($event)"
+            (showTaskDetailsItem)="onShowTaskDetailsEvent($event)"
+            [myTask]=item
+            class="content">
+          </task-item>
+        </li>
+      </ul>      
+    </div>
+  </div>
 </section>

@@ -16,11 +16,14 @@ var appSrc = 'builds/development/',
       'node_modules/angular2/bundles/angular2.dev.js',
       'node_modules/angular2/bundles/http.dev.js',
       'node_modules/angular2/bundles/router.dev.js',
+      'node_modules/bootstrap/dist/js/bootstrap.min.js',
     ],
     cssModules = [
+      'node_modules/bootstrap/dist/css/bootstrap.min.css',
       'node_modules/font-awesome/css/font-awesome.min.css'
     ],
     fontModules = [
+      'node_modules/bootstrap/dist/fonts/*',
       'node_modules/font-awesome/fonts/*'
     ];
 
@@ -35,7 +38,8 @@ gulp.task('fonts', function() {
 
 gulp.task('css-modules', function() {
   gulp.src(cssModules)
-  .pipe(gulp.dest(appSrc + 'css'))
+  .pipe(concat('bundle.css'))
+  .pipe(gulp.dest(appSrc));
 });
 
 gulp.task('css', function() {
@@ -46,7 +50,7 @@ gulp.task('copylibs', function() {
   return gulp
     .src(appModules)
     .pipe(concat('bundle.js'))
-    .pipe(gulp.dest(appSrc + 'js/lib/angular2'));
+    .pipe(gulp.dest(appSrc));
 });
 
 gulp.task('typescript', function () {

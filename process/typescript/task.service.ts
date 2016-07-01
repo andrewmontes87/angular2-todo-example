@@ -31,9 +31,13 @@ export class TaskService {
       .map(response => {});
   }
 
+  saveTaskInService(task) {
+    return this.http.post('save', JSON.stringify(task), { headers: new Headers({'Content-Type':'application/json'}) })
+      .map(response => {});
+  }
+
   starTaskInService(task) {
-    var headers = new Headers({'Content-Type':'application/json'});
-    return this.http.post('star', JSON.stringify({'id':task.id}), { headers: headers })
+    return this.http.post('star', JSON.stringify({'id':task.id}), { headers: new Headers({'Content-Type':'application/json'}) })
       .map(response => {});
   }
 
@@ -41,4 +45,6 @@ export class TaskService {
     return this.http.delete(`tasks/${task.id}`)
       .map(response => {});
   }
+
+
 }

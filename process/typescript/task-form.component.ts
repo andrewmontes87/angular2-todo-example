@@ -8,7 +8,7 @@ import {PROVIDED_VALUE} from './providers';
   selector: 'task-form',
   templateUrl: 'partials/task-form.html',
   directives: [ROUTER_DIRECTIVES],
-  styleUrls: ['css/task-form.component.css']
+  styleUrls: ['css/app.css','css/task-form.component.css']
 })
 
 export class TaskFormComponent{
@@ -24,7 +24,6 @@ export class TaskFormComponent{
     if (!this.taskForm) {
       this._buildForm();
     }    
-
   }
 
   // easter egg validator for form

@@ -1,4 +1,5 @@
 import {Component} from 'angular2/core';
+import {Task} from './task';
 import {TaskFormComponent} from './task-form.component';
 import {TaskListComponent} from './task-list.component';
 import {TaskService} from './task.service';
@@ -9,15 +10,15 @@ import {RouteParams, ROUTER_DIRECTIVES} from 'angular2/router'
   selector: 'task-container',
   templateUrl: 'partials/task-container.html',
   directives: [TaskFormComponent, TaskListComponent, ROUTER_DIRECTIVES],
-  styleUrls: ['css/task-container.component.css']
+  styleUrls: ['css/app.css','css/task-container.component.css']
 })
 
 
 export class TaskContainerComponent {
   // declare status and tasks properties
-  status = null;
-  currentTask = null;
-  tasks = []
+  status: boolean = null;
+  currentTask: boolean = null;
+  tasks: Task[] = []
 
   // call a constructor
   constructor(private taskService: TaskService,
@@ -44,8 +45,8 @@ export class TaskContainerComponent {
   onAddTaskEvent(task) {
     this.taskService.addTaskToService(task)
       .subscribe( () => {
+        this.status = null;
         this.getTaskListFromService(this.status);
-
       } );    
   }
 
@@ -61,7 +62,18 @@ export class TaskContainerComponent {
   onDeleteTaskEvent(task) {
     this.taskService.deleteTaskFromService(task)
       .subscribe( () => {
+        this.status = null;
         this.getTaskListFromService(this.status);
       } );
   }
+
+  // handle deletetask events, pass to service
+  onSaveTaskEvent(task) {
+    this.taskService.saveTaskInService(task)
+      .subscribe( () => {
+        this.status = null;
+        this.getTaskListFromService(this.status);
+      } );
+  }
+
 }

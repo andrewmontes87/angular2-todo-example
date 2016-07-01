@@ -47,8 +47,8 @@ export class MockXHRBackend {
                     break;
                 case RequestMethod.Post:
                     if (request.url === 'star') {
-                         var body = JSON.parse(request.text().toString());
-                         var id = body.id;
+                        var body = JSON.parse(request.text().toString());
+                        var id = body.id;
                         if (id >= 0) {
                             var task = this._tasks.find(task => task.id === id);
                             var index = this._tasks.indexOf(task);
@@ -64,6 +64,23 @@ export class MockXHRBackend {
                             }
                         }                      
                         responseOptions = new ResponseOptions({ status: 201 });                        
+                    } else if (request.url === 'save') {
+                        var body = JSON.parse(request.text().toString());
+                        var id = body.id;
+                        if (id >= 0) {
+                            var task = this._tasks.find(task => task.id === id);
+                            var index = this._tasks.indexOf(task);
+                            if (index >= 0) {
+                                this._tasks[index] = body;
+                                responseOptions = new ResponseOptions({ status: 201 }); 
+                            } else {
+                                responseOptions = new ResponseOptions({
+                                    body: JSON.stringify({error: 'id for /save is not valid'}),
+                                    status: 404}
+                                );
+                                responseObserver.error(new Response(responseOptions));
+                            }
+                        }
                     } else {
                         var task = JSON.parse(request.text().toString());
                         task.id = this._getNewId();
@@ -86,8 +103,6 @@ export class MockXHRBackend {
     }
     
     _deleteTask(id) {
-        console.log('hello world deleting')
-        console.log(id)
         var task = this._tasks.find(task => task.id === id);
         var index = this._tasks.indexOf(task);
         if (index >= 0) {

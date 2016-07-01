@@ -15,6 +15,12 @@
    justify-content: center;
 }
 
+
+.task-edit {
+  width: 100%;
+  background: white;
+}
+
 .tasklist {
   width: 100%;
   background: white;

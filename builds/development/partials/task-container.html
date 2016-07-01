@@ -1,9 +1,13 @@
 <task-form
   (addTask)="onAddTaskEvent($event)">
 </task-form>
+
+<hr>
+
 <task-list 
   [tasks]="tasks"
   [currentTask]="currentTask"
   (starTaskList)="onStarTaskEvent($event)"
-  (deleteTaskList)="onDeleteTaskEvent($event)">
+  (deleteTaskList)="onDeleteTaskEvent($event)"
+  (saveTaskList)="onSaveTaskEvent($event)">
 </task-list>  
