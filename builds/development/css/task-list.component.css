@@ -1,0 +1,49 @@
+/* task List Styles */
+
+
+
+.flexcontainer {
+  width: 80%;
+  margin: 0em auto;
+   display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: row /* works with row or column */
+   flex-direction: row;
+/*   -webkit-align-items: center;
+   align-items: center;*/
+   -webkit-justify-content: center;
+   justify-content: center;
+}
+
+.tasklist {
+  width: 100%;
+  background: white;
+  z-index: 10;
+}
+
+.tasklist ul {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+.tasklist li {
+  border-bottom: 1px solid #999;
+  opacity: .9;
+  transition: all 0.3s ease-out;
+}
+
+.tasklist a {
+  display: block;
+  text-decoration: none;
+}
+
+.tasklist li:hover {
+  cursor: pointer;
+  /*background: #FDF6E3;*/
+  opacity: 1;
+  -webkit-transform: scale(1.005);
+  -moz-transform: scale(1.005);
+  -ms-transform: scale(1.005);
+  transform: scale(1.005);
+}

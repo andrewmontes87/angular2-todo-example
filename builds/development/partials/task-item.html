@@ -1,0 +1,17 @@
+<div
+  [todoStatusClass]="task.status">
+
+  <div class="flexcontainer"  (click)="onShowTaskDetails()">
+    <div>
+      <p class="star"
+        [todoStarredClass]="task.starred"
+        (click)="onStarTask()">
+        <i class="fa fa-star" aria-hidden="true"></i>
+      </p>
+    </div>
+    <div>
+      <h2>{{task.name}}</h2>
+      <h3>Status: {{task.status | status}}</h3>
+    </div>
+  </div>
+</div>

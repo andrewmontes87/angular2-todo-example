@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Learn AngularJS2: The Basics</title>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <link href='https://fonts.googleapis.com/css?family=Lato:700,400,100,200,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <script src="js/lib/angular2/bundle.js"></script>
+    <script>
+      System.config({
+        packages: {
+          js: {
+            format: 'register',
+            defaultExtension: 'js'
+          }
+        }
+      });
+      System.import('js/boot')
+        .then(null, console.error.bind(console));
+    </script>
+  </head>
+
+<body>
+  <my-app>Loading...</my-app>
+</body>
+</html>

@@ -1,0 +1,22 @@
+
+
+<section class="flexcontainer">
+
+  <task-details 
+    [myTask]="currentTask"
+    (deleteTaskItem)="onDeleteTaskEvent($event)">
+  </task-details>
+
+
+  <ul class="tasklist cf">
+    <li  class="task cf" *ngFor="#item of (tasks)"> <!-- (click)="showTask(item);"  #item of (tasks) -->
+      <task-item 
+        (starTaskItem)="onStarTaskEvent($event)"
+        (showTaskDetailsItem)="onShowTaskDetailsEvent($event)"
+        [myTask]=item
+        class="content">
+      </task-item>
+    </li>
+  </ul>
+
+</section>

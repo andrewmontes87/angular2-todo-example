@@ -1,0 +1,38 @@
+<div class="tasksearch">
+  <div class="card search">
+    <h1>Angular2 TODO App</h1>
+    <h3>{{ providedValue.value }}</h3>
+    <form  *ngIf="!isResetting" (ngSubmit)="onSubmit(taskForm.value)" [ngFormModel]="taskForm">
+      <div class="flexcontainer">
+        <input id="task-form-name" name="name" ngControl="name" placeholder="What's your task?" required #name="ngForm">
+        <input type="submit" value="Add Task" name="submit" class="form-button" [disabled]="!taskForm.valid">        
+      </div>
+      <div *ngIf="name.errors?.forbidden" class="error">
+          must not {{name.errors?.forbidden}}
+      </div>
+      <label for="status">Status:</label>
+      <select name="status" ngControl="status">
+        <option value="0">TODO</option>
+        <option value="1">In Progress</option>
+        <option value="2">Done</option>
+      </select>
+    </form>
+
+    <nav class="status-filter-buttons">
+        Filter:
+        <a [routerLink]="['../List', {status: null}]">
+            All
+        </a>
+        <a [routerLink]="['../List', {status: 0}]">
+            TODO
+        </a>
+        <a [routerLink]="['../List', {status: 1}]">
+            In Progress
+        </a>
+        <a [routerLink]="['../List', {status: 2}]">
+            Done
+        </a>
+    </nav>
+
+  </div>
+</div>

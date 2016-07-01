@@ -1,0 +1,9 @@
+<task-form
+  (addTask)="onAddTaskEvent($event)">
+</task-form>
+<task-list 
+  [tasks]="tasks"
+  [currentTask]="currentTask"
+  (starTaskList)="onStarTaskEvent($event)"
+  (deleteTaskList)="onDeleteTaskEvent($event)">
+</task-list>  

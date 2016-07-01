@@ -1,0 +1,83 @@
+
+/* Search Styles */
+
+.flexcontainer {
+   display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: row /* works with row or column */
+   flex-direction: row;
+  margin: 0 0 1em 0;
+
+}
+ 
+.search {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 1em;
+  padding: 20px 30px;
+  z-index: 20;
+}
+
+.search h1 {
+  margin-bottom: 10px;
+}
+
+.search label {
+  font-size: 1rem;
+  text-align: left;
+  font-family: Lato, 'Helvetica Nueue', Helvetica, Arial, sans-serif;
+}
+
+.search input#task-form-name {
+  width: 100%;
+  display: inline-block;
+  font-weight: 100;
+  padding: 15px;
+  font-size: 1.3rem;
+  color: #475B62;
+  border: 1px solid #C5C5C5;
+  outline: 0;
+}
+
+.form-button {
+  padding: 1em 2em;
+  background-color: #337AB7;
+  color: white;
+  font-size: 1.3em;
+  /*font-weight: bold;*/
+  border: 0;
+}
+
+select {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;  
+}
+
+
+.form-button:disabled {
+  background-color: #7BA9D0;
+}
+
+.status-filter-buttons {
+  background-color: white;
+  margin-top:1em;
+  padding-top:1em;
+  border-top: 1px solid #cfcfcf;
+}
+
+.status-filter-buttons a {
+  margin:1em;
+
+}
+
+
+

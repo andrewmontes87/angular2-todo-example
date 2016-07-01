@@ -1,0 +1,40 @@
+h2 { margin-top: 0;}
+
+.flexcontainer {
+   display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: row /* works with row or column */
+   flex-direction: row;
+   -webkit-align-items: center;
+   align-items: center;
+   -webkit-justify-content: left;
+   justify-content: left;
+}
+
+.status-0 {
+  background-color: #D9EDF7;
+  border-color: #337AB7;
+  padding: 10px 10px 10px 0px;
+}
+
+.status-1 {
+  background-color: #FCF8E3;
+  border-color: #F0AD4E;
+  padding: 10px 10px 10px 0px;
+}
+
+.status-2 {
+  background-color: #DFF0D8;
+  border-color: #5CB85C;
+  padding: 10px 10px 10px 0px;
+}
+
+.star {
+  margin: 1em;
+  font-size: 1.5em;
+  color: #414141;
+}
+
+.starred.star {
+  color: #F0AD4E;
+}

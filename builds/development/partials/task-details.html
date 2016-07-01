@@ -1,0 +1,18 @@
+<section *ngIf="task" class="card taskinfo">
+  <div class="task cf">
+    <h1>{{task.name}}</h1>
+    <div class="info">
+      <h3>Status: {{task.status | status }}</h3>
+      <div class="longbio">{{task.description}}</div>
+      <a (click)="onDeleteTask()">Delete this task</a>
+    </div>
+
+
+  </div>
+</section>
+<section *ngIf="!task" class="card taskinfo">
+  <div class="task cf">
+    <h1>Add a new task, or click a task to see details.</h1>
+  </div>
+</section>
+
