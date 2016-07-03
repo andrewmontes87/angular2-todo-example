@@ -16,8 +16,8 @@ import {RouteParams, ROUTER_DIRECTIVES} from 'angular2/router'
 
 export class TaskContainerComponent {
   // declare status and tasks properties
-  status: boolean = null;
-  currentTask: boolean = null;
+  status: string;
+  currentTask: Task;
   tasks: Task[] = []
 
   // call a constructor
@@ -29,6 +29,7 @@ export class TaskContainerComponent {
   ngOnInit() {
     this.status = this.routeParams.get('status');
     this.getTaskListFromService(this.status);
+    console.log(this.routeParams);
   }
 
   // call service for list with param status

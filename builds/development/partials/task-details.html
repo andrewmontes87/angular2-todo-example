@@ -4,7 +4,8 @@
     <div class="info">
       <h3>Status: {{task.status | status }}</h3>
       <div class="longbio">{{task.description}}</div>
-      <button class="btn btn-default" [disabled]="editFlag" (click)="onEditTask()">Edit this task</button>
+      <!-- <button class="btn btn-default" [disabled]="editFlag" (click)="onEditTask()">Edit this task</button> -->
+      <button class="btn btn-default" [disabled]="editFlag" [routerLink]="['../EditTask', {taskid: task.id}]" type="button">Edit this task</button>
     </div>
   </div>
 </section>

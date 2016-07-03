@@ -15,13 +15,15 @@
       (saveTaskItem)="onSaveTaskEvent($event)">
     </task-edit>
     <div *ngIf="!edit">
-      <label for="filter-nav">Filter list by status:</label>
-      <nav class="btn-group" name="filter-nav" role="group" aria-label="...">
-        <button [routerLink]="['../List', {status: null}]" type="button" class="btn btn-default">All</button>
-        <button [routerLink]="['../List', {status: 0}]" type="button" class="btn btn-default">TODO</button>
-        <button [routerLink]="['../List', {status: 1}]" type="button" class="btn btn-default">In Progress</button>
-        <button [routerLink]="['../List', {status: 2}]" type="button" class="btn btn-default">Done</button>
-      </nav>   
+      <div class="filter-nav-wrap">
+        <label for="filter-nav">Filter list by status:</label>
+        <nav class="btn-group" name="filter-nav" role="group" aria-label="...">
+          <button [routerLink]="['../List', {status: null}]" type="button" class="btn btn-default">All</button>
+          <button [routerLink]="['../List', {status: 0}]" type="button" class="btn btn-default">TODO</button>
+          <button [routerLink]="['../List', {status: 1}]" type="button" class="btn btn-default">In Progress</button>
+          <button [routerLink]="['../List', {status: 2}]" type="button" class="btn btn-default">Done</button>
+        </nav>  
+      </div> 
       <ul  class="tasklist cf">
         <li  class="task cf" *ngFor="#item of (tasks)"> <!-- (click)="showTask(item);"  #item of (tasks) -->
           <task-item 

@@ -47,8 +47,8 @@ export class MockXHRBackend {
                     break;
                 case RequestMethod.Post:
                     if (request.url === 'star') {
-                        var body = JSON.parse(request.text().toString());
-                        var id = body.id;
+                        let body = JSON.parse(request.text().toString());
+                        let id = body.id;
                         if (id >= 0) {
                             var task = this._tasks.find(task => task.id === id);
                             var index = this._tasks.indexOf(task);
@@ -65,8 +65,8 @@ export class MockXHRBackend {
                         }                      
                         responseOptions = new ResponseOptions({ status: 201 });                        
                     } else if (request.url === 'save') {
-                        var body = JSON.parse(request.text().toString());
-                        var id = body.id;
+                        let body = JSON.parse(request.text().toString());
+                        let id = body.id;
                         if (id >= 0) {
                             var task = this._tasks.find(task => task.id === id);
                             var index = this._tasks.indexOf(task);
@@ -82,7 +82,7 @@ export class MockXHRBackend {
                             }
                         }
                     } else {
-                        var task = JSON.parse(request.text().toString());
+                        let task = JSON.parse(request.text().toString());
                         task.id = this._getNewId();
                         this._tasks.push(task);
                         responseOptions = new ResponseOptions({ status: 201 });                        

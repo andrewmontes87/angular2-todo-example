@@ -4,6 +4,7 @@ import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router'
 
 @RouteConfig([
   { path: '/:status', component: TaskContainerComponent, name: 'List' },
+  { path: '/task/:taskid', component: TaskContainerComponent, name: 'EditTask' },
 ])
 @Component({
   selector: 'my-app',

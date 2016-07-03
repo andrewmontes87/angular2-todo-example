@@ -21,7 +21,7 @@ html {
 }
 
 body  {
-  font-family: Lato, 'Helvetica Nueue', Helvetica, Arial, sans-serif;
+  font-family: 'Lato', 'Helvetica Nueue', Helvetica, Arial, sans-serif;
   font-size: 1rem;
   line-height: 160%;
   color: #555459;
@@ -52,7 +52,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 h1{
-  font-size: 2.2rem;
+  /*font-size: 2.2rem;*/
   line-height: 100%;
   margin-bottom: 10px;
   padding-top: 10px;
@@ -64,7 +64,7 @@ h1{
 
 h2{
   font-weight: 400;
-  font-size: 1.5rem;
+  /*font-size: 1.5rem;*/
   line-height: 90%;
   margin-bottom: 5px;
   margin-top: 10px;
@@ -72,16 +72,30 @@ h2{
 
 h3{
   margin-top: 0;
-  font-size: 1.2rem;
+  /*font-size: 1.2rem;*/
   line-height: 110%;
   margin-bottom: 5px;
 }
 
 
 a.small {
-  line-height: 100%;
-  font-size: .9rem;
+  /*line-height: 100%;
+  font-size: .9rem;*/
 }
 
+input, select, textarea, .input-group-addon, .btn {
+  border-radius: 0px;
+}
 
+/* thanks you based stackoverflow */
+/*http://stackoverflow.com/questions/24210132/remove-border-radius-from-select-tag-in-bootstrap-3*/
+select:not([multiple]) {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-position: right 50%;
+    background-repeat: no-repeat;
+    background-image: url('images/select-arrow.svg');
+    padding: .5em;
+    padding-right: 1.5em
+}
 

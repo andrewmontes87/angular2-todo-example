@@ -53,3 +53,8 @@
   -ms-transform: scale(1.005);
   transform: scale(1.005);
 }
+
+.filter-nav-wrap {
+  text-align: right;
+  margin-bottom: 1em;
+}

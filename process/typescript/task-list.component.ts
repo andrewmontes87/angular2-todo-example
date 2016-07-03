@@ -27,9 +27,11 @@ export class TaskListComponent{
   @Output('starTaskList') star = new EventEmitter();
   @Output('deleteTaskList') delete = new EventEmitter();
   @Output('saveTaskList') save = new EventEmitter();
+  @Output('editTask') editTask = new EventEmitter();
 
   // handle events from child items
   onStarTaskEvent(e) { this.star.emit(e); }
+  onEditTaskEvent(e) { this.editTask.emit(e); }
   onDeleteTaskEvent(e) { 
     this.currentTask = null;
     this.edit = false;
